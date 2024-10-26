@@ -4,7 +4,6 @@ using System.Text.Json;
 public class Excerpt
     {
         public string rendered { get; set; }
-        public bool @protected { get; set; }
     }
 
     public class Noticia
