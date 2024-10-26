@@ -30,6 +30,12 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/noticias", () => Paso1.Ejecutar());
+var trueGroup = app.MapGroup("/asignacion").WithTags("Asignaciones").WithDescription("Rutas de las asignaciones.");
+
+trueGroup.MapGet("/noticias", () => Paso1.Ejecutar());
+
+trueGroup.MapPost("/registro_usuario", (Usuario u) => ManejadorUsuario.Registro(u));
+
+trueGroup.MapPost("/iniciar_sesion", (DatosLogin dl) => ManejadorUsuario.IniciarSesion(dl));
 
 app.Run();

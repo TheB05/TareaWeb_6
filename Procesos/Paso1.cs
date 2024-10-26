@@ -1,5 +1,6 @@
 
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 public class Excerpt
     {
@@ -34,6 +35,7 @@ class Paso1{
 
             var titulo = noticia.title.rendered;
             var resumen = noticia.excerpt.rendered;
+            resumen = Regex.Replace(resumen, "<.*?>", string.Empty);
             var dic = new Dictionary<string, string>();
             dic.Add("Título", titulo);
             dic.Add("Resumen", resumen);

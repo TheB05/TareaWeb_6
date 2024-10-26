@@ -31,3 +31,4 @@ C:\Web\TareaWeb_6\obj\Debug\net8.0\TareaWeb_6.pdb
 C:\Web\TareaWeb_6\obj\Debug\net8.0\TareaWeb_6.genruntimeconfig.cache
 C:\Web\TareaWeb_6\obj\Debug\net8.0\ref\TareaWeb_6.dll
 C:\Web\TareaWeb_6\obj\Debug\net8.0\TareaWeb_6.sourcelink.json
+C:\Web\TareaWeb_6\bin\Debug\net8.0\usuarios\02121275525104.json
