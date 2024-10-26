@@ -28,8 +28,19 @@ class Paso1{
         var response = await client.GetAsync(url);
         var json = await response.Content.ReadAsStringAsync();
         var noticias = JsonSerializer.Deserialize<List<Noticia>>(json);
+        var finai = new List<Dictionary<string, string>>();
+
+        foreach(var noticia in noticias){
+
+            var titulo = noticia.title.rendered;
+            var resumen = noticia.excerpt.rendered;
+            var dic = new Dictionary<string, string>();
+            dic.Add("Título", titulo);
+            dic.Add("Resumen", resumen);
+            finai.Add(dic);
+        }
         
-        return new ServerResult(true, "Noticias cargadas", noticias);
+        return new ServerResult(true, "Noticias cargadas", finai);
         }
         catch(Exception ex){
             return new ServerResult(false, ex.Message);
